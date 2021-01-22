@@ -1,10 +1,13 @@
 //jshint esversion:6
-
+const multer = require('multer');
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+const router = express.Router();
 
+ const swig = require('swig');
+const path = require('path');
 const homeStartingContent =
   "Lacus vel facilisis volutpat est velit egestas dui id ornare. Semper auctor neque vitae tempus quam. Sit amet cursus sit amet dictum sit amet justo. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing.";
 const aboutContent =
@@ -18,12 +21,19 @@ app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
+app.use('uploads',express.static('uploads'));
 mongoose.connect("mongodb+srv://sanuj:firsthosting@cluster0.eo7aw.mongodb.net/blogDB", { useNewUrlParser: true });
+// mongoose.createConnection("mongodb://localhost:27017/blogDB", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
 const postSchema = {
   title: String,
   content: String,
+  author: String,
+  img : String,
+  date : String,
 };
 
 const Post = mongoose.model("Post", postSchema);
@@ -41,10 +51,17 @@ app.get("/compose", function (req, res) {
   res.render("compose");
 });
 
-app.post("/compose", function (req, res) {
+
+app.post("/compose" , function (req, res) {
+  console.log(req.body);
+  
   const post = new Post({
     title: req.body.postTitle,
     content: req.body.postBody,
+    author: req.body.postAuthor,
+    img: req.body.img,
+    date: new Date(Date.now()).toDateString(),
+   
   });
 
   post.save(function (err) {
@@ -61,6 +78,9 @@ app.get("/posts/:postId", function (req, res) {
     res.render("post", {
       title: post.title,
       content: post.content,
+      author: post.author,
+      img: post.img,
+      date: post.date,
     });
   });
 });

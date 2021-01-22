@@ -1,9 +1,43 @@
 <%- include("partials/header"); -%>
+<section class="BlogDetails ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="BlogFourSingle">
+                            <div class="BlogFourDate">
+                                <span>
+                                    <b><%=date%></b>
+                                    
+                                </span>
+                            </div><!-- /.BlogFourDate -->
+                            <div class="BlogFourImage">
+                                <img src="<%=img%>" alt="Awesome Image" />
+                            </div><!-- /.BlogFourImage -->
+                            <div class="blog-four__content">
+                                <div class="BlogFourMeta">
+                                    Author : <%=author%>
+                                    <span class="BlogFourMeta-sep">_</span><!-- /.BlogFourMeta-sep -->
+                                   
+                                  
+                                </div><!-- /.BlogFourMeta -->
+                                <h3 class="BlogFourTitle"><%=title%> </h3><!-- /.BlogFourTitle -->
+                              
+                             
 
-<h1><%=title%></h1>
-<p><%=content%></p>
+                                <div class="en"><%=content%></div>  
+
+                                
 
 
 
-
+                                
+                            
+                           
+                               
+                        </div><!-- /.BlogFourSingle -->
+                    </div><!-- /.col-lg-8 -->
+                   
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.BlogDetails -->
 <%- include("partials/footer"); -%>
