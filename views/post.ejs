@@ -1,43 +1,44 @@
 <%- include("partials/header"); -%>
-<section class="BlogDetails ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <div class="BlogFourSingle">
-                            <div class="BlogFourDate">
-                                <span>
-                                    <b><%=date%></b>
-                                    
-                                </span>
-                            </div><!-- /.BlogFourDate -->
-                            <div class="BlogFourImage">
-                                <img src="<%=img%>" alt="Awesome Image" />
-                            </div><!-- /.BlogFourImage -->
-                            <div class="blog-four__content">
-                                <div class="BlogFourMeta">
-                                    Author : <%=author%>
-                                    <span class="BlogFourMeta-sep">_</span><!-- /.BlogFourMeta-sep -->
-                                   
-                                  
-                                </div><!-- /.BlogFourMeta -->
-                                <h3 class="BlogFourTitle"><%=title%> </h3><!-- /.BlogFourTitle -->
-                              
-                             
-
-                                <div class="en"><%=content%></div>  
-
-                                
-
-
-
-                                
-                            
-                           
-                               
-                        </div><!-- /.BlogFourSingle -->
-                    </div><!-- /.col-lg-8 -->
-                   
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.BlogDetails -->
+<section class="blog-single">
+  <div class="container">
+    <div class="row">
+      <div class="title text-center">
+        <h2
+          style="
+            font-size: 40px;
+            font-family: Playfair Display, serif;
+            font-weight: 700;
+          "
+        >
+          <%=title%>
+        </h2>
+      </div>
+      <div class="col-md-12">
+        <!-- Blog Left Sections
+				  =========================-->
+        <!-- Single Blog Page Main Img
+            ============================== -->
+        <div class="blog-single-section-img">
+          <img src="<%=img%>" alt="Blog Single Img" />
+        </div>
+        <!-- Single Blog Page Main Content
+            ================================== -->
+        <div class="blog-single-content">
+          <div class="blog-content-description">
+            <div class="meta">
+              <div class="date">
+                <p><%=date%></p>
+              </div>
+              <div class="author">
+                <p>By <%=author%></p>
+              </div>
+            </div>
+            <p class="blog-description"><%=content%></p>
+          </div>
+        </div>
+        <!-- End Single Blog Content -->
+      </div>
+    </div>
+  </div>
+</section>
 <%- include("partials/footer"); -%>
