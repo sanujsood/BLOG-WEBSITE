@@ -1,47 +1,57 @@
 <%- include("partials/header"); -%>
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
 
-  <head>
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
-  <body>
-   <section class="BlogInBlogs " style="display: block;">
-            <div class="BlogHeader" style="background-image: url('https://i.ibb.co/YpqSYMH/blog-header.jpg'); background-repeat:no-repeat; background-size: 100% 100%;  height: 100%;" >
+    <head>
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+
+    <body>
+        <section class="BlogInBlogs " style="display: block;">
+            <div class="BlogHeader"
+                style="background-image: url('https://i.postimg.cc/1XkB2tMq/blog-header.jpg'); background-repeat:no-repeat; background-size: 100% 100%;  height: 100%;">
                 <h1 style=" color: white; font-size: 12rem;padding-top: 100px;margin-top: 20px;">Blogs</span> </h1>
             </div>
             <div class="container">
                 <div class="row masonary-layout">
 
 
-                   
-              <%posts.forEach(function(post){%>
-                    <div class="col-lg-4 col-md-6 col-sm-12 masonary-item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="0ms">
-                        <div class="BlogInBlogsSingle">
-                            <div class="BlogInBlogsImage">
-                                <img src="<%=post.img%>" alt="abc" />
-                               
-                                <a href="#" class="BlogInBlogsDate"><%=post.date%></a>
-                            </div><!-- /.BlogInBlogsImage -->
-                            <div class="BlogInBlogsContent">
-                                <div class="BlogInBlogsMeta">
-                                    <a href="/posts/<%=post._id%>"></a><%=post.author%></a>
-                                    <span class="BlogInBlogsMeta-sep"></span><!-- /.BlogInBlogsMeta-sep -->
-                                    
-                                </div><!-- /.BlogInBlogsMeta -->
-                                <h3 class="BlogInBlogsTitle" style="color: black;"><a href="/posts/<%=post._id%>""><%=post.title%></a></h3><!-- /.BlogInBlogsTitle -->
+
+                    <%posts.forEach(function(post){%>
+                        <div class="col-lg-4 col-md-6 col-sm-12 masonary-item wow fadeInUp" data-wow-duration="1500ms"
+                            data-wow-delay="0ms">
+                            <div class="BlogInBlogsSingle">
+                                <div class="BlogInBlogsImage">
+                                    <img src="<%=post.img%>" alt="abc" />
+
+                                    <a href="#" class="BlogInBlogsDate">
+                                        <%=post.date%>
+                                    </a>
+                                </div><!-- /.BlogInBlogsImage -->
+                                <div class="BlogInBlogsContent">
+                                    <div class="BlogInBlogsMeta">
+                                        <a href="/posts/<%=post._id%>"></a>
+                                        <%=post.author%></a>
+                                            <span class="BlogInBlogsMeta-sep"></span><!-- /.BlogInBlogsMeta-sep -->
+
+                                    </div><!-- /.BlogInBlogsMeta -->
+                                    <h3 class="BlogInBlogsTitle" style="color: black;"><a href="/posts/<%=post._id%>""><%=post.title%></a></h3><!-- /.BlogInBlogsTitle -->
 
                                
-                                <a href="/posts/<%=post._id%>" class="BlogInBlogsLink" style="color: ;">Read More</a>
-                            </div><!-- /.BlogInBlogsContent -->
-                        </div><!-- /.BlogInBlogsSingle -->
-                    </div><!-- /.col-lg-4 col-md-6 -->
+                                <a href=" /posts/<%=post._id%>" class="BlogInBlogsLink" style="color: ;">Read More</a>
+                                </div><!-- /.BlogInBlogsContent -->
+                            </div><!-- /.BlogInBlogsSingle -->
+                        </div><!-- /.col-lg-4 col-md-6 -->
 
-          
 
-  <% })%></section>
-                  </body>
-</html>
 
-<div><%- include("partials/footer"); -%></div>
+                        <% })%>
+        </section>
+    </body>
+
+    </html>
+
+    <div>
+        <%- include("partials/footer"); -%>
+    </div>
