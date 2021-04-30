@@ -21,7 +21,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use('uploads', express.static('uploads'));
-mongoose.connect("mongodb+srv://sanuj:firsthosting@cluster0.eo7aw.mongodb.net/blogDB", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://sanuj:firsthosting@cluster0.eo7aw.mongodb.net/blogDB", { useNewUrlParser: true });
 // mongoose.createConnection("mongodb://localhost:27017/blogDB", {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
